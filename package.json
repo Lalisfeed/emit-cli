@@ -1,11 +1,14 @@
 {
   "name": "emit-cli",
-  "version": "1.0.0",
-  "description": "A template file generation cli for all languages",
+  "version": "1.0.1",
+  "description": " A template generation cli for all languages and frameworks.",
   "main": "cli.js",
   "bin": {
     "emit": "cli.js"
   },
+  "engines": {
+		"node": ">=12"
+	},
   "scripts": {
     "start": "node cli.js",
     "test": "echo 'Error: no test specified' && exit 1"
@@ -14,7 +17,12 @@
     "type": "git",
     "url": "git+https://github.com/Lalisfeed/emit-cli.git"
   },
-  "keywords": [],
+  "keywords": [
+    "cli",
+    "cli-app",
+		"version",
+    "template"
+  ],
   "author": "Lali Akhil Raj",
   "license": "MIT",
   "bugs": {

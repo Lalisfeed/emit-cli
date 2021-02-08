@@ -3,12 +3,14 @@
 const fs = require('fs')
 const path = require('path')
 const args = process.argv.slice(2)
+const ppp = require("./package.json")
 // args type : emit filename filetype
 
 // (fileType, fileName, fileContent)
 const fsWrite = (foo,bar,baz) => {
-   fs.writeFileSync(process.cwd() + "/" + bar + "." + foo, baz)
-   console.log(":) Created " + bar + "." + foo + " file.") 
+    fs.writeFileSync(process.cwd() + "/" + bar + "." + foo, baz)
+    console.log(":) Created " + bar + "." + foo + " file.") 
+    console.log(" ")
 }
 
 // print error
@@ -20,11 +22,10 @@ const filedError = () => {
 
 const fileHelp = () => {
     console.log("Hello! from `emit`- a command line cli ")
-    console.log("I'm here to help you create new non-empty files.")
-    console.log("like to work with me? check this out.")
+    console.log("I'm here to help you create new files.")
     console.log(" ")
-    console.log("Usage: emit [filetype]... [filename]... [framework]...")
-    console.log("Simple filetype is the file extension")
+    console.log("> Usage: emit [filetype]... [filename]... [framework]...")
+    console.log("Note: filetype is the file extension")
     console.log(" ")
     console.log("filetypes that I can recognize are as follows.")
     console.log("   [filetype]...   [About]")
@@ -32,7 +33,7 @@ const fileHelp = () => {
     console.log("   css             - create a (.css) Css file.")
     console.log("   js              - create a (.js) Javascript file.")
     console.log("   pjson           - create a package.json file. (used for `npm`)")
-    console.log("   vue              - create a (.vue) Vue file.")
+    console.log("   vue             - create a (.vue) Vue file.")
     console.log("   py              - create a (.py) Python file.")
     console.log("   java            - create a (.java) Java file.")
     console.log("   php             - create a (.php) Php file.")
@@ -48,13 +49,12 @@ const fileHelp = () => {
     console.log("[Frameworks]...")
     console.log("   --rfce            - create a (.js) ReactJS file.")
     console.log("   --rafc            - create a (.js) ReactJS file.")
-    console.log("   --rafce            - create a (.js) ReactJS file.")
+    console.log("   --rafce           - create a (.js) ReactJS file.")
     console.log("   --rafcp           - create a (.js) ReactJS file.")
     console.log("   --vue             - create a (.vue) VueJS file.")
     console.log(" ")
     console.log("Note: If filename is not given, `Index` will be used as default.")
-    console.log("      Existing files will be overwritten!")
-    console.log(" ")
+    console.log("      Existing files will be overwritten!!!")
 }
 // All pages
 
@@ -325,6 +325,9 @@ if (args.length == 1 || args.length == 2){
     }
     if ((args[0] === "--help") || (args[0] === "-h")){
         fileHelp()
+    }
+    else if ((args[0] === "--version") || (args[0] === "-v")){
+        console.log("version " + ppp.version)
     }
     else if(args[0] === "html"){
         fsWrite(args[0], args[1], htmlPage(args[1]))
