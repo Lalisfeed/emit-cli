@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const fs = require('fs')
-const path = require('path')
 const args = process.argv.slice(2)
 const ppp = require("./package.json")
 // args type : emit filename filetype
@@ -67,16 +66,19 @@ int main()
     printf("Hello World");
 
     return 0;
-}`
+}
+`
 }
 
 // cpp page .cpp
 const cppPage = (argx) => {
-    return `#include <stdio.h>
+    return `#include <iostream>
+
+using namespace std;
 
 int main()
 {
-    printf("Hello World");
+    cout<<"${argx}";
 
     return 0;
 }
@@ -102,7 +104,7 @@ const htmlPage = (argx) => {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>${argx}</title>
 </head>
 <body>
     
@@ -122,10 +124,14 @@ const cssPage = (argx) => {
 }
 
 const jsPage = (argx) => {
-    return `console.log("hello, world!");
-`
+    return `console.log("${argx}");
+const func = (x) => {
+    return x;
 }
 
+export default func;
+`
+}
 
 
 // pjson page .json

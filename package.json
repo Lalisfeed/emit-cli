@@ -1,7 +1,7 @@
 {
   "name": "emit-cli",
-  "version": "1.0.2",
-  "description": " A template generation cli for all languages and frameworks.",
+  "version": "1.0.3",
+  "description": " A CLI to create template files all languages and frameworks.",
   "main": "cli.js",
   "bin": {
     "emit": "cli.js"
