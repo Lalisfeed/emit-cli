@@ -1,6 +1,6 @@
  # emit-cli
  
- > A template generation cli for all languages and frameworks.
+ > A CLI tool to create template files for all languages and frameworks.
 
 [![npm version](https://img.shields.io/npm/v/emit-cli.svg?style=flat-square)](https://www.npmjs.org/package/emit-cli)
 [![install size](https://packagephobia.now.sh/badge?p=emit-cli)](https://packagephobia.now.sh/result?p=emit-cli)
@@ -28,7 +28,7 @@ emit -h
 
  ## Usage
 
-To generate a simple file, use the following command.
+* __To generate a simple file, use the following command.__
  
  ```
  emit [filetype]... [filename]... 
@@ -37,7 +37,8 @@ To generate a simple file, use the following command.
  > Note: This command can & will overwrite existing files.
 
  For Example:
- * Generate a file  `Unicorn.html` with:
+
+ Generate a file  `Unicorn.html` with:
  
  ```
  emit html Unicorn
@@ -45,14 +46,15 @@ To generate a simple file, use the following command.
 
  > Note : default name is ```Index```  
 
- * Generate a file for a framework
+ * __To Generate a file for a framework.__
 
-```
+ ```
  emit [filetype]... [filename]... [framework]... 
  ```
 
  For Example:
- * Generate a file  `Header.js` for react framework with:
+
+ Generate a file  `Header.js` for react framework with:
  
  ```
  emit js Header --rafc
@@ -62,7 +64,7 @@ To generate a simple file, use the following command.
 
 ## Contribution
 
-- Pull Requestes will be accepted for good changes.
+- Pull Requests are accepted.
 
  ## License
  

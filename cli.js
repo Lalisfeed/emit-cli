@@ -35,6 +35,7 @@ const fileHelp = () => {
     console.log("   vue             - create a (.vue) Vue file.")
     console.log("   py              - create a (.py) Python file.")
     console.log("   java            - create a (.java) Java file.")
+    console.log("   go              - create a (.go) Go file.")
     console.log("   php             - create a (.php) Php file.")
     console.log("   swift           - create a (.swift) Swift file.")
     console.log("   c               - create a (.c) C file.")
@@ -46,7 +47,7 @@ const fileHelp = () => {
     console.log("   pas             - create a (.pas) Pascal file.")
     console.log(" ")
     console.log("[Frameworks]...")
-    console.log("   --rfce            - create a (.js) ReactJS file.")
+    console.log("   --rfce            - create a (.js) ReactJS file with .")
     console.log("   --rafc            - create a (.js) ReactJS file.")
     console.log("   --rafce           - create a (.js) ReactJS file.")
     console.log("   --rafcp           - create a (.js) ReactJS file.")
@@ -54,6 +55,8 @@ const fileHelp = () => {
     console.log(" ")
     console.log("Note: If filename is not given, `Index` will be used as default.")
     console.log("      Existing files will be overwritten!!!")
+    console.log(" ")
+    console.log("Report Issues at https://github.com/Lalisfeed/emit-cli/issues/new.")
 }
 // All pages
 
@@ -63,7 +66,7 @@ const cPage = (argx) => {
 
 int main()
 {
-    printf("Hello World");
+    printf("Hello ${argx}!");
 
     return 0;
 }
@@ -78,7 +81,7 @@ using namespace std;
 
 int main()
 {
-    cout<<"${argx}";
+    cout<<"Hello, ${argx}!";
 
     return 0;
 }
@@ -215,6 +218,18 @@ const rubyPage = (argx) => {
 // R page .r
 const rPage = (argx) => {
     return `print("Hello World")
+`
+}
+
+// go page .go
+const goPage = (argx) => {
+    return `package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello, ${argx}!")
+}
 `
 }
 
@@ -362,6 +377,9 @@ if (args.length == 1 || args.length == 2){
     }
     else if (args[0] === "swift"){
         fsWrite(args[0], args[1], swiftPage(args[1]))
+    }
+    else if (args[0] === "go"){
+        fsWrite(args[0], args[1], goPage(args[1]))
     }
     else if (args[0] === "c"){
         fsWrite(args[0], args[1], cPage(args[1]))
