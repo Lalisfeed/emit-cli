@@ -38,6 +38,7 @@ const fileHelp = () => {
     console.log("   go              - create a (.go) Go file.")
     console.log("   php             - create a (.php) Php file.")
     console.log("   swift           - create a (.swift) Swift file.")
+    console.log("   sh              - create a (.sh) Bash file.")
     console.log("   c               - create a (.c) C file.")
     console.log("   cpp             - create a (.cpp) C++ file.")
     console.log("   cs              - create a (.cs) C# file.")
@@ -59,6 +60,12 @@ const fileHelp = () => {
     console.log("Report Issues at https://github.com/Lalisfeed/emit-cli/issues/new.")
 }
 // All pages
+
+//  bash page .sh
+const shPage = (argx) => {
+    return `echo "${argx}";
+`
+}
 
 //  c page .c
 const cPage = (argx) => {
@@ -380,6 +387,9 @@ if (args.length == 1 || args.length == 2){
     }
     else if (args[0] === "go"){
         fsWrite(args[0], args[1], goPage(args[1]))
+    }
+    else if (args[0] === "sh"){
+        fsWrite(args[0], args[1], shPage(args[1]))
     }
     else if (args[0] === "c"){
         fsWrite(args[0], args[1], cPage(args[1]))

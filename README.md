@@ -21,14 +21,16 @@ For Help use this command
 ```
 emit --help
 ```
-or 
+
+or
+
 ```
 emit -h
 ```
 
  ## Usage
 
-* __To generate a simple file, use the following command.__
+__To generate a simple file, use the following command.__
  
  ```
  emit [filetype]... [filename]... 
@@ -36,7 +38,7 @@ emit -h
  
  > Note: This command can & will overwrite existing files.
 
- For Example:
+* For Example:
 
  Generate a file  `Unicorn.html` with:
  
@@ -46,13 +48,13 @@ emit -h
 
  > Note : default name is ```Index```  
 
- * __To Generate a file for a framework.__
+__To Generate a file for a framework.__
 
  ```
  emit [filetype]... [filename]... [framework]... 
  ```
 
- For Example:
+* For Example:
 
  Generate a file  `Header.js` for react framework with:
  
